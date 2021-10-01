@@ -6,7 +6,9 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { Adresse } from '../shared/model/adresse';
 import { Infirmiere } from '../shared/model/infirmiere';
+import { AdresseService } from '../shared/service/adresse.service';
 import { InfirmiereService } from '../shared/service/infirmiere.service';
 
 @Component({
@@ -17,7 +19,7 @@ import { InfirmiereService } from '../shared/service/infirmiere.service';
 export class InfirmiereNewComponent implements OnInit {
   infirmiereForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private infirmiereService: InfirmiereService) {
+  constructor(private fb: FormBuilder, private infirmiereService: InfirmiereService, private adresseService: AdresseService) {
     this.infirmiereForm = this.fb.group({
       nom: new FormControl('', [
         Validators.required,
@@ -34,12 +36,12 @@ export class InfirmiereNewComponent implements OnInit {
       ]),
       telPro: this.fb.control('', [
         Validators.required,
-        Validators.minLength(15),
+        Validators.minLength(8),
         Validators.maxLength(15),
       ]),
       telPerso: this.fb.control('', [
         Validators.required,
-        Validators.minLength(15),
+        Validators.minLength(8),
         Validators.maxLength(15),
       ]),
       adresse: new FormGroup({
@@ -54,15 +56,17 @@ export class InfirmiereNewComponent implements OnInit {
   ngOnInit(): void {}
 
   createInfirmiere(): void {
-    console.log(this.infirmiereForm.value.adresse);
-    // if (this.infirmiereForm.status === 'VALID') {
-    //   this.infirmiereForm.value.adresse;
-    //   this.infirmiereService
-    //     .postInfirmiere(this.infirmiereForm.value)
-    //     .subscribe((newInfirmiere: Infirmiere) => {
-    //       console.log(newInfirmiere);
-    //       this.infirmiereForm.reset();
-    //     });
-    // }
+    if (this.infirmiereForm.status === 'VALID') {
+      this.adresseService
+        .postAdresse(this.infirmiereForm.value.adresse)
+        .subscribe((newAdresse: Adresse) => {
+          this.infirmiereForm.value.adresse = newAdresse;
+          this.infirmiereService
+            .postInfirmiere(this.infirmiereForm.value)
+            .subscribe((newInfirmiere: Infirmiere) => {
+              this.infirmiereForm.reset();
+            });
+        });
+    }
   }
 }
