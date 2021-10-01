@@ -1,8 +1,8 @@
+import { Adresse } from "./adresse";
+
 export interface Infirmiere {
   id: number;
-  adresse: {
-    id: number;
-  };
+  adresse: Adresse;
   numeroProfessionnel: number;
   nom: string;
   prenom: string;

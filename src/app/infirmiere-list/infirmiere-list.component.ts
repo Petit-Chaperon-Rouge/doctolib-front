@@ -33,7 +33,6 @@ export class InfirmiereListComponent implements OnInit, OnDestroy {
 
   getInfirmieres() {
     this.infirmiereService.refreshInfirmieres();
-    console.log(this.infirmieres);
   }
 
   deleteInfirmiere(id: number) {
