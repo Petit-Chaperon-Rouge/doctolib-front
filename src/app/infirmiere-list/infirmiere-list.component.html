@@ -9,7 +9,7 @@
                 <th>Prénom</th>
                 <th>Tel Pro</th>
                 <th>Tel Perso</th>
-                <th></th>
+                <!-- <th></th> -->
                 <th></th>
             </tr>
         </thead>
@@ -20,10 +20,10 @@
                 <td>{{infirmiere.prenom}}</td>
                 <td>{{infirmiere.telPro}}</td>
                 <td>{{infirmiere.telPerso}}</td>
-                <td><button (click)="updateInfirmiere()" class="btn btn-sm">Modifier</button></td>
+                <!-- <td><button (click)="updateInfirmiere()" class="btn btn-sm">Modifier</button></td> -->
                 <td><button (click)="deleteInfirmiere(infirmiere.id)" class="btn btn-danger btn-sm">Supprimer</button></td>
             </tr>
         </tbody>
     </table>
-    <!-- <button routerLink="/infirmieres/add">Ajouter une infirmiere</button> -->
+    <button routerLink="/infirmieres/new">Ajouter une infirmiere</button>
 </div>

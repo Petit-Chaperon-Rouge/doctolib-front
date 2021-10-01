@@ -7,20 +7,25 @@ import { AppComponent } from './app.component';
 import { InfirmiereListComponent } from './infirmiere-list/infirmiere-list.component';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
+import { InfirmiereNewComponent } from './infirmiere-new/infirmiere-new.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfirmiereListComponent,
     NavbarComponent,
-    PatientListComponent
+    PatientListComponent,
+    InfirmiereNewComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

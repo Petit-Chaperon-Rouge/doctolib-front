@@ -1,0 +1,47 @@
+<button routerLink="/infirmieres">Retour</button>
+
+<hr>
+
+<form [formGroup]="infirmiereForm" (ngSubmit)="createInfirmiere()">
+    <div class="form-item">
+        <label for="nom">Nom </label>
+        <input type="text" id="nom" formControlName="nom" />
+    </div>
+    <div class="form-item">
+        <label for="prenom">Prénom </label>
+        <input type="text" id="prenom" formControlName="prenom" />
+    </div>
+    <div class="form-item">
+        <label for="numeroProfessionnel">Numero Professionnel </label>
+        <input type="number" id="numeroProfessionnel" formControlName="numeroProfessionnel" />
+    </div>
+    <div class="form-item">
+        <label for="telPro">Numéro de téléphone pro </label>
+        <input type="tel" id="telPro" formControlName="telPro" />
+    </div>
+    <div class="form-item">
+        <label for="telPerso">Numéro de téléphone perso </label>
+        <input type="tel" id="telPerso" formControlName="telPerso" />
+    </div>
+    <hr>
+    <!-- Adresse -->
+    <div class="form-group" formGroupName="adresse">
+        <div class="form-item">
+            <label for="numero">Numéro </label>
+            <input type="text" id="numero" formControlName="numero" />
+        </div>
+        <div class="form-item">
+            <label for="rue">Rue </label>
+            <input type="text" id="rue" formControlName="rue" />
+        </div>
+        <div class="form-item">
+            <label for="cp">Code postal </label>
+            <input type="text" id="cp" formControlName="cp" />
+        </div>
+        <div class="form-item">
+            <label for="ville">Ville </label>
+            <input type="text" id="ville" formControlName="ville" />
+        </div>
+    </div>
+    <button type="submit">Ajouter</button>
+</form>

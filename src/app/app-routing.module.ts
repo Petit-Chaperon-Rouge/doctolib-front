@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InfirmiereListComponent } from './infirmiere-list/infirmiere-list.component';
+import { InfirmiereNewComponent } from './infirmiere-new/infirmiere-new.component';
 import { PatientListComponent } from './patient-list/patient-list.component';
 
 const routes: Routes = [
@@ -12,7 +13,7 @@ const routes: Routes = [
     path: 'infirmieres',
     children: [
       { path: '', component: InfirmiereListComponent, pathMatch: 'full' },
-      //     { path: 'new', component: NewInfirmiereComponent },
+          { path: 'new', component: InfirmiereNewComponent },
       //     { path: ':id', component: InfirmierePageComponent },
     ],
   },

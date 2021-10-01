@@ -10,7 +10,7 @@
                 <th>Sexe</th>
                 <th>Numero Secu</th>
                 <th>Infirmiere</th>
-                <th></th>
+                <!-- <th></th> -->
                 <th></th>
             </tr>
         </thead>
@@ -22,7 +22,7 @@
                 <td>{{patient.sexe}}</td>
                 <td>{{patient.numeroSecuriteSocial}}</td>
                 <td>{{patient.infirmiere.nom | uppercase}} {{patient.infirmiere.prenom}}</td>
-                <td><button (click)="updatePatient()" class="btn btn-sm">Modifier</button></td>
+                <!-- <td><button (click)="updatePatient()" class="btn btn-sm">Modifier</button></td> -->
                 <td><button (click)="deletePatient(patient.id)" class="btn btn-danger btn-sm">Supprimer</button>
                 </td>
             </tr>
