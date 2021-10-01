@@ -7,3 +7,21 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.btn {
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  color: #212529;
+  vertical-align: top;
+  text-align: left;
+  border: 2px solid;
+}
+
+.table td,
+.table th {
+  padding: 10px;
+}
