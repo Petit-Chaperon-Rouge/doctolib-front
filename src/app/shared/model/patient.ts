@@ -1,11 +1,10 @@
 import { Adresse } from "./adresse";
+import { Infirmiere } from "./infirmiere";
 
 export interface Patient {
   id: number;
   adresse: Adresse;
-  infirmiere: {
-    id: number;
-  };
+  infirmiere: Infirmiere;
   nom: string;
   prenom: string;
   dateDeNaissance: Date;

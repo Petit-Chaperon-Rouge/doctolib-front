@@ -16,7 +16,7 @@
         <tbody>
             <tr *ngFor="let infirmiere of infirmieres">
                 <td>{{infirmiere.numeroProfessionnel}}</td>
-                <td>{{infirmiere.nom}}</td>
+                <td>{{infirmiere.nom | uppercase}}</td>
                 <td>{{infirmiere.prenom}}</td>
                 <td>{{infirmiere.telPro}}</td>
                 <td>{{infirmiere.telPerso}}</td>

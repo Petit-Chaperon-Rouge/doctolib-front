@@ -6,12 +6,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InfirmiereListComponent } from './infirmiere-list/infirmiere-list.component';
 import { NavbarComponent } from './shared/component/navbar/navbar.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfirmiereListComponent,
-    NavbarComponent
+    NavbarComponent,
+    PatientListComponent
   ],
   imports: [
     BrowserModule,

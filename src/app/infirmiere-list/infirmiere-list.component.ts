@@ -26,7 +26,6 @@ export class InfirmiereListComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     if (this.infirmieresSub) {
-      // désinscription à l'opbservable (libération des ressources)
       this.infirmieresSub.unsubscribe();
     }
   }

@@ -1,28 +1,31 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { InfirmiereListComponent } from './infirmiere-list/infirmiere-list.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
 
 const routes: Routes = [
   // redirection
   // { path: '', redirectTo: 'infirmieres', pathMatch: 'full' },
+
   // Routes pour la section infirmiere
   {
     path: 'infirmieres',
     children: [
       { path: '', component: InfirmiereListComponent, pathMatch: 'full' },
-      //     { path: 'new', component: NewArticleComponent },
-      //     { path: ':id', component: ArticlePageComponent },
+      //     { path: 'new', component: NewInfirmiereComponent },
+      //     { path: ':id', component: InfirmierePageComponent },
     ],
   },
-  // Routes pour les articles
-  // {
-  //   path: 'articles',
-  //   children: [
-  //     { path: '', component: ArticleListComponent, pathMatch: 'full' },
-  //     { path: 'new', component: NewArticleComponent },
-  //     { path: ':id', component: ArticlePageComponent },
-  //   ],
-  // },
+
+  // Routes pour la section patient
+  {
+    path: 'patients',
+    children: [
+      { path: '', component: PatientListComponent, pathMatch: 'full' },
+      // { path: 'new', component: NewPatientComponent },
+      // { path: ':id', component: PatientPageComponent },
+    ],
+  },
 ];
 
 @NgModule({

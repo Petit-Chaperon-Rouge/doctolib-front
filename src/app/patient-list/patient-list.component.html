@@ -1,0 +1,32 @@
+<h2>Liste des patients</h2>
+
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Date de naissance</th>
+                <th>Sexe</th>
+                <th>Numero Secu</th>
+                <th>Infirmiere</th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let patient of patients">
+                <td>{{patient.nom | uppercase}}</td>
+                <td>{{patient.prenom}}</td>
+                <td>{{patient.dateDeNaissance}}</td>
+                <td>{{patient.sexe}}</td>
+                <td>{{patient.numeroSecuriteSocial}}</td>
+                <td>{{patient.infirmiere.nom | uppercase}} {{patient.infirmiere.prenom}}</td>
+                <td><button (click)="updatePatient()" class="btn btn-sm">Modifier</button></td>
+                <td><button (click)="deletePatient(patient.id)" class="btn btn-danger btn-sm">Supprimer</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <!-- <button routerLink="/patients/new">Ajouter un patient</button> -->
+</div>
