@@ -58,12 +58,12 @@ export class InfirmiereService {
 
   /**
    * Supprime une infirmiere
-   * @param infirmieres l'infirmiere à supprimer
+   * @param infirmiereId l'id de l'infirmiere à supprimer
    * @returns {Observable<any>}
    */
-  delInfirmiere(infirmieres: Infirmiere): Observable<any> {
+  delInfirmiere(infirmiereId: number): Observable<any> {
     return this.http.delete(
-      `${environment.url_api}/infirmieres/${infirmieres.id}`
+      `${environment.url_api}/infirmieres/${infirmiereId}`
     );
   }
 }

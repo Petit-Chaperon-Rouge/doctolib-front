@@ -36,12 +36,14 @@ export class InfirmiereListComponent implements OnInit, OnDestroy {
     console.log(this.infirmieres);
   }
 
-  deleteInfirmiere() {
-
+  deleteInfirmiere(id: number) {
+    this.infirmiereService.delInfirmiere(id).subscribe((resp) => {
+      this.infirmiereService.refreshInfirmieres();
+    });
   }
 
   updateInfirmiere() {
-    
+
   }
 
 }

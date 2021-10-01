@@ -21,7 +21,7 @@
                 <td>{{infirmiere.telPro}}</td>
                 <td>{{infirmiere.telPerso}}</td>
                 <td><button (click)="updateInfirmiere()" class="btn btn-sm">Modifier</button></td>
-                <td><button (click)="deleteInfirmiere()" class="btn btn-danger btn-sm">Supprimer</button></td>
+                <td><button (click)="deleteInfirmiere(infirmiere.id)" class="btn btn-danger btn-sm">Supprimer</button></td>
             </tr>
         </tbody>
     </table>
